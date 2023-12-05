@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2023 a las 04:57:28
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 05-12-2023 a las 05:01:08
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,29 +28,30 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `oradores` (
-  `id_orador` int(50) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `mail` varchar(100) NOT NULL,
-  `tema` varchar(500) NOT NULL,
-  `fecha_alta` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `id_orador` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `tema` varchar(255) NOT NULL,
+  `fecha_alta` datetime NOT NULL DEFAULT current_timestamp(),
+  `activo` char(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `oradores`
 --
 
-INSERT INTO `oradores` (`id_orador`, `nombre`, `apellido`, `mail`, `tema`, `fecha_alta`) VALUES
-(1, 'German', 'Montenegro', 'm@gmail.com', 'la vida misma', '2023-11-01'),
-(2, 'Ger', 'Monte', '2@gmail.com', 'la vida misma', '1982-03-31'),
-(3, 'German', 'Montenegro', 'm@gmail.com', 'la vida misma', '1982-03-31'),
-(4, 'German', 'Montenegro', 'm@gmail.com', 'la vida misma', '2023-11-11'),
-(5, 'German', 'Montenegro', 'm@gmail.com', 'la vida misma', '1982-03-31'),
-(6, 'German', 'Montenegro', 'm@gmail.com', 'la vida misma', '1982-03-31'),
-(7, 'Gerardo', 'Montenegro', 'm@gmail.com', 'la vida misma', '1982-03-31'),
-(8, 'German', 'Montenegro', 'm@gmail.com', 'la vida misma', '1982-03-31'),
-(9, 'German', 'Montenegro', 'm@gmail.com', 'la vida misma', '1982-03-31'),
-(10, 'Martin', 'Montenegro', 'm@gmail.com', 'la vida misma', '1982-03-31');
+INSERT INTO `oradores` (`id_orador`, `nombre`, `apellido`, `mail`, `tema`, `fecha_alta`, `activo`) VALUES
+(15, 'fermin', 'artigas', 'montenegroagerman@gmail.com', 'adasdasdadad  ', '2023-11-30 16:53:32', 'S'),
+(16, 'Germán', 'Montenegro', 'montenegroagerman@gmail.com', 'adasdasdadad', '2023-11-30 16:53:34', 'S'),
+(17, 'Germán', 'Montenegro', 'montenegroagerman@gmail.com', 'adasdasdadad', '2023-11-30 16:53:36', 'S'),
+(19, 'Germán', 'Montenegro', 'montenegroagerman@gmail.com', 'adasdasdadad', '2023-11-30 16:53:38', 'S'),
+(20, 'jordan', 'RUPERT', 'montenegroagerman@gmail.com', 'adasdasdadad ', '2023-11-30 16:53:39', 'S'),
+(21, 'Germán', 'Montenegro', 'montenegroagerman@gmail.com', 'adasdasdadad', '2023-11-30 16:53:40', 'S'),
+(22, 'Germán', 'Monte', 'montenegroagerman@gmail.com', 'adasdasdadad ', '2023-11-30 16:53:41', 'S'),
+(23, 'Germán', 'Montenegro', 'montenegroagerman@gmail.com', 'wddddd', '2023-12-02 01:39:12', 'S'),
+(24, 'sabrina', 'katia', 'mnnnon@gmail.com', 'dddasasdadad', '2023-12-03 03:57:45', 'S'),
+(25, 'nuevo', 'orador', 'montenegroagerman@hotmail.com', 'probando sistema', '2023-12-05 00:20:58', 'S');
 
 --
 -- Índices para tablas volcadas
@@ -70,7 +71,7 @@ ALTER TABLE `oradores`
 -- AUTO_INCREMENT de la tabla `oradores`
 --
 ALTER TABLE `oradores`
-  MODIFY `id_orador` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_orador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
